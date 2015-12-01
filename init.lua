@@ -28,9 +28,9 @@ end
 
 m = mqtt.Client(AIO_key, 120, AIO_username, AIO_key)
 m:on("message", function(conn, topic, data)
-  if data ~= nil then
-    local color = HexadecimalToColor(string.gsub(data, "#", "", 1))
-    ws2812.writergb(4, string.char(color.r, color.g, color.b):rep(3))
-  end
+    if data ~= nil then
+        local color = HexadecimalToColor(string.gsub(data, "#", "", 1))
+        ws2812.writergb(4, string.char(color.r, color.g, color.b):rep(3))
+    end
 end)
 m:connect("io.adafruit.com", 1883, 0, function(conn) m:subscribe(AIO_username .. "/feeds/" .. AIO_feedname, 0, function(conn) print("subscribe success") end) end)
