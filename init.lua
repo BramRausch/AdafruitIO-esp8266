@@ -1,3 +1,8 @@
+--[[
+This code subscribes to a stream of a color picker on a adafruit IO dashboard. 
+The colour it received is in HEX and is converted to RGB. The ws2812 write function receives these colours and displays it.
+]]--
+
 -- wifi login
 SSID = <SSID>
 password = <password>
