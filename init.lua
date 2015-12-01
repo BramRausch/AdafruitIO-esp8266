@@ -1,5 +1,5 @@
 -- wifi login
-username = <username>
+SSID = <SSID>
 password = <password>
 
 -- adafruit IO data
